@@ -15,7 +15,9 @@ export default {
   				'Segoe UI Emoji',
   				'Segoe UI Symbol',
   				'Noto Color Emoji'
-  			]
+  			],
+			  sansita: ["Sansita Swashed", "cursive"],
+
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

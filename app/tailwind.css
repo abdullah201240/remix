@@ -69,6 +69,20 @@ body {
   }
 }
 
+/* Hide scrollbar for Chrome, Safari, and Edge */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Prevent overflow scroll */
+html, body {
+  overflow-x: hidden;
+}
 
 
 @layer base {
