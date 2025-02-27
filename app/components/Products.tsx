@@ -19,13 +19,13 @@ export default function Products() {
                     >
                         {/* Default Image */}
                         <motion.img
-                            src="images/cart1.png"
+                            src="images/ex3.png"
                             alt="Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:hidden"
                         />
                         {/* Hover Image */}
                         <motion.img
-                            src="images/cart2.png"
+                            src="images/ex4.png"
                             alt="Hovered Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 scale-110 hidden group-hover:block"
                         />
@@ -84,13 +84,13 @@ export default function Products() {
                     >
                         {/* Default Image */}
                         <motion.img
-                            src="images/cart1.png"
+                            src="images/ex3.png"
                             alt="Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:hidden"
                         />
                         {/* Hover Image */}
                         <motion.img
-                            src="images/cart2.png"
+                            src="images/ex4.png"
                             alt="Hovered Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 scale-110 hidden group-hover:block"
                         />
@@ -149,13 +149,13 @@ export default function Products() {
                     >
                         {/* Default Image */}
                         <motion.img
-                            src="images/cart1.png"
+                            src="images/ex3.png"
                             alt="Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:hidden"
                         />
                         {/* Hover Image */}
                         <motion.img
-                            src="images/cart2.png"
+                            src="images/ex4.png"
                             alt="Hovered Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 scale-110 hidden group-hover:block"
                         />
