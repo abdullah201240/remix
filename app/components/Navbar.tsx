@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "@remix-run/react";
+import { motion } from "framer-motion"; // Importing framer-motion for animations
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,8 @@ const Navbar = () => {
       if (
         isDesktopDropdownOpen &&
         dropdownRef.current &&
-        !dropdownRef.current.contains(target)) {
+        !dropdownRef.current.contains(target)
+      ) {
         setIsDesktopDropdownOpen(false);
       }
     };
@@ -40,10 +42,13 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <nav
+    <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-sm shadow-md text-white" : "bg-transparent text-white"
       }`}
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
         <div className="relative flex items-center justify-between h-20">
@@ -105,39 +110,59 @@ const Navbar = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:block">
             <div className="flex space-x-4">
-              <Link
-                to="/"
-                className={`px-3 py-2 text-medium font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-                  isScrolled ? "text-white" : "text-white"
-                }`}
-                aria-current="page"
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Home
-              </Link>
-              <Link
-                to="/aboutUs"
-                className={`px-3 py-2 text-medium font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-                  isScrolled ? "text-white" : "text-white"
-                }`}
+                <Link
+                  to="/"
+                  className={`px-3 py-2 text-medium font-medium hover:text-[#E9BD8C]  rounded-md ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                  aria-current="page"
+                >
+                  Home
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Blog
-              </Link>
-              <Link
-                to="/company"
-                className={`px-3 py-2 text-medium font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-                  isScrolled ? "text-white" : "text-white"
-                }`}
+                <Link
+                  to="/aboutUs"
+                  className={`px-3 py-2 text-medium font-medium hover:text-[#E9BD8C]  rounded-md ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Contact Us
-              </Link>
-              <Link
-                to="/career"
-                className={`px-3 py-2 text-medium font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-                  isScrolled ? "text-white" : "text-white"
-                }`}
+                <Link
+                  to="/company"
+                  className={`px-3 py-2 text-medium font-medium hover:text-[#E9BD8C] hover:text-white rounded-md ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                >
+                  Contact Us
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                Services
-              </Link>
+                <Link
+                  to="/career"
+                  className={`px-3 py-2 text-medium font-medium hover:text-[#E9BD8C]  rounded-md ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                >
+                  Services
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -146,58 +171,88 @@ const Navbar = () => {
       {/* Mobile and Tablet Menu */}
       <div className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`} id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2">
-          <Link
-            to="/"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
-            aria-current="page"
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Home
-          </Link>
-          <Link
-            to="/aboutUs"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+            <Link
+              to="/"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+              aria-current="page"
+            >
+              Home
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            About Us
-          </Link>
-          <Link
-            to="/company"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+            <Link
+              to="/aboutUs"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+            >
+              About Us
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Our Company
-          </Link>
-          <Link
-            to="/career"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+            <Link
+              to="/company"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+            >
+              Our Company
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Career
-          </Link>
-          <Link
-            to="/blog"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+            <Link
+              to="/career"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+            >
+              Career
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Blog
-          </Link>
-          <Link
-            to="/contactUs"
-            className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
-              isScrolled ? "text-black" : "text-white"
-            }`}
+            <Link
+              to="/blog"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+            >
+              Blog
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            Contact Us
-          </Link>
+            <Link
+              to="/contactUs"
+              className={`block px-3 py-2 text-base font-medium hover:bg-[#E9BD8C] hover:text-white rounded-md ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+            >
+              Contact Us
+            </Link>
+          </motion.div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

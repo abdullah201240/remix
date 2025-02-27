@@ -73,7 +73,7 @@ export default function Explore() {
                                 whileHover={{
                                     scale: 1.15,
                                     rotate: 5,
-                                    borderRadius: "50%",
+                                    transform: "skew(-5deg, -5deg)",  // Apply skew to make it unique
                                 }}
                                 transition={{
                                     type: "spring",

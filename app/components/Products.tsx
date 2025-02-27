@@ -90,7 +90,7 @@ export default function Products() {
                         />
                         {/* Hover Image */}
                         <motion.img
-                            src="images/ex4.png"
+                            src="images/ex.png"
                             alt="Hovered Product Image"
                             className="absolute inset-0 h-full w-full object-cover transition-all duration-500 scale-110 hidden group-hover:block"
                         />
